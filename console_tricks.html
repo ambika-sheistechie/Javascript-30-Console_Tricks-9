@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log("Regular");
+    console.log("I am a Classy Girl");
+
+    // Interpolated
+    console.log("Interpolated");
+    console.log("I am a Classy %s",'Girl');
+
+    // Styled
+    console.log('%c Hey There, Iam Awesome!','font-size:20px;color:yellow;background:blue;');
+
+    // warning!
+    console.warn('Stop right there, Its my warning');
+
+    // Error :|
+    console.error('Woah! Its your mistake');
+
+    // Info
+    console.info('Iam Ambika,I am using info method of console object to display this text');
+
+    // Testing
+    const pp=document.querySelector('p');
+    console.assert(pp.classList.contains('boo'),'p has no class called boo,it is single');
+
+    // clearing
+    console.clear();
+
+    // Viewing DOM Elements
+    console.dir(pp); //displays the properties of pp on console in chrome and firefox
+    console.log(pp); //displays the properties of pp on console in firefox and displays only element on console of chrome
+
+    // Grouping together
+    dogs.forEach(dog=>
+    {
+        console.group(`${dog.name}`);
+        console.log(`This is ${dog.name}`);
+        console.log(` ${dog.name} is ${dog.age} years old`);
+        console.groupEnd(`${dog.name}`)
+    });
+
+    // counting
+    console.count('ambi');
+    console.log('years');
+    console.count('Classy Girl');
+    console.count('ambi');
+
+    // timing
+    console.time('Processing');
+    console.log('ambika');
+    console.log('years');
+    console.log('ambika');
+    console.log('ambika');
+    
+    console.timeEnd('Processing');
+  </script>
+</body>
+</html>
